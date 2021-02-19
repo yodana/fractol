@@ -40,7 +40,7 @@ bin:
 
 $(NAME): bin  $(OBJ)
 	@ar rc $(NAME) $(OBJ)
-	@printf "$(GREEN) LIBFT DONE SUCESS! $(END_COLOR)"
+	@printf "$(GREEN)LIBFT DONE SUCESS! $(END_COLOR)"
 
 $(BIN_FOLDER)%.o :%.c
 	@gcc $< -c -I $(HEADER) -o $@ -Wall -Wextra -Werror
@@ -48,11 +48,11 @@ $(BIN_FOLDER)%.o :%.c
 
 clean: 
 	@rm -rf $(BIN_FOLDER)
-	@printf "$(GREEN) Clean libft done $(END_COLOR)\n"
+	@printf "$(GREEN)Clean libft done $(END_COLOR)\n"
 
 fclean: clean
 	@rm -rf $(NAME)
-	@printf "$(GREEN) Fclean libft done $(END_COLOR)\n"
+	@printf "$(GREEN)Fclean libft done $(END_COLOR)\n"
 
 re: fclean all
 

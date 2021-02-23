@@ -3,8 +3,8 @@
 
 # include "../libft/libft.h"
 # include "mlx.h"
-# define LARGEUR 800
-# define LONGUEUR 1440
+# define LARGEUR 240
+# define LONGUEUR 270
 # define ZOOM 250
 # include <math.h>
 
@@ -23,6 +23,8 @@ typedef struct		s_mandelbrot
 	double			y1;
 	double			y2;
 	int				i;
+	double			z;
+	double			h;
 }					t_mandelbrot;
 
 typedef struct		s_windows
@@ -34,12 +36,13 @@ typedef struct		s_windows
 	int				width;
 	int				height;
 	int				color;
+	t_mandelbrot	*m;
 }					t_windows;
 
 void	init_windows(t_windows *w);
-void    setup_mandelbrot(t_mandelbrot *m);
-int		ft_event(int key, t_windows *w, t_mandelbrot *m);
-void	draw_new_map(t_windows *w, t_mandelbrot *m);
+t_mandelbrot	*setup_mandelbrot();
+int		ft_event(int key, t_windows *w);
+void	draw_new_map(t_windows *w);
 void	mandelbrot(t_windows *w, t_mandelbrot *m);
 void	draw_pixel(int x, int y, t_windows *window, int color);
 #endif
